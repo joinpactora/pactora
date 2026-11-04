@@ -1,0 +1,17 @@
+{
+  "name": "relayworks",
+  "private": true,
+  "version": "0.5.0",
+  "type": "module",
+  "description": "RelayWorks landing page, $RELAY token page, and live recovery console",
+  "scripts": {
+    "check": "node --check dist/main.js && node --check dist/api.js && node --check dist/art.js && node --check dist/config.js && node --check dist/app.js && node --check dist/landing.js && node --check dist/docs.js && node --check dist/data.js && node --check dist/ui.js && node --check dist/relay-hero.js && node --check dist/relay-model.js && node --check dist/relay-scene.js && node --check scripts/export-model.mjs && node --check dist/specialist-hero.js && node --check dist/workspace-preview.js && node --check dist/specialist-model.js && node --check dist/specialist-scene.js && node --check dist/marketing-interactions.js && node --check scripts/export-specialist.mjs && node --check dist/patch-motion.js && node --check dist/recovery-journey.js && node --check scripts/export-journey.mjs && node scripts/check-motion.mjs && node --check scripts/export-animated-journey.mjs",
+    "export:model": "node scripts/export-model.mjs",
+    "export:specialist": "node scripts/export-specialist.mjs",
+    "export:journey": "node scripts/export-journey.mjs",
+    "export:animation": "node scripts/export-animated-journey.mjs",
+    "deploy:cf": "npx wrangler deploy",
+    "deploy:cf:preview": "npx wrangler deploy --temporary",
+    "shot:mobile": "node scripts/mobile-shot.mjs"
+  }
+}
