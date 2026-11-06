@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+<defs>
+ <radialGradient id="face" cx=".38" cy=".3" r=".85"><stop offset="0" stop-color="#2F8A72"/><stop offset=".55" stop-color="#1C4839"/><stop offset="1" stop-color="#0F2C22"/></radialGradient>
+ <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D8F7EA"/><stop offset=".5" stop-color="#7FD3B4"/><stop offset="1" stop-color="#2F8A72"/></linearGradient>
+ <path id="arc" d="M500 500 m-380 0 a380 380 0 1 1 760 0 a380 380 0 1 1 -760 0"/>
+ <radialGradient id="shine" cx=".3" cy=".2" r=".6"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+</defs>
+<circle cx="500" cy="500" r="490" fill="url(#rim)"/>
+<circle cx="500" cy="500" r="452" fill="url(#face)"/>
+<circle cx="500" cy="500" r="420" fill="none" stroke="#8FF0C8" stroke-opacity=".55" stroke-width="3"/>
+<circle cx="500" cy="500" r="342" fill="none" stroke="#8FF0C8" stroke-opacity=".35" stroke-width="2"/>
+<text font-family="Google Sans Code, monospace" font-weight="700" font-size="32" letter-spacing="2" fill="#D8F7EA"><textPath href="#arc" startOffset="0" textLength="2380" lengthAdjust="spacing">PACTORA · $PACT · BRING YOUR SKILL · FIND YOUR TEAM · SOLANA · PACTORA · $PACT · BRING YOUR SKILL · FIND YOUR TEAM · SOLANA · </textPath></text>
+<g transform="translate(500 500) scale(9.2) translate(-32 -32)"><g transform="translate(3 0)"><rect x="17" y="13" width="9" height="38" rx="2.4" fill="#FFFFFF"/><path d="M26.00 17.50A10.5 10.5 0 0 1 34.49 21.83" fill="none" stroke="#8FF0C8" stroke-width="9"/><path d="M35.27 23.07A10.5 10.5 0 0 1 35.27 32.93" fill="none" stroke="#4FC79E" stroke-width="9"/><path d="M34.49 34.17A10.5 10.5 0 0 1 26.00 38.50" fill="none" stroke="#D8F7EA" stroke-width="9"/></g></g>
+<circle cx="500" cy="500" r="452" fill="url(#shine)"/>
+</svg>

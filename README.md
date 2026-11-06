@@ -1,80 +1,80 @@
-# RelayWorks
+# Pactora
 
-Your AI agent quit at 70%. Patch finishes the job.
+[![Check](https://github.com/OWNER/pactora/actions/workflows/check.yml/badge.svg)](https://github.com/OWNER/pactora/actions/workflows/check.yml)
 
-The RelayWorks website and recovery console. It has a comic landing page, a live console where you hand a broken agent job to a specialist, the $RELAY token page, and a product blueprint. It's buildless HTML, CSS and ES modules. There's no bundler and no dependency installation.
+Bring your skill. Find your team. Build together.
 
-The control API, worker and verifier live in [relayworks-recovery](https://github.com/relayworkslab/relayworks-recovery).
+This is the Pactora landing page. Developers, artists, creators, marketers, community leads, KOLs and investors find each other on Pactora. They agree on the work in a wallet-signed pact before anyone starts, and get paid for what they actually contribute. The page also covers the $PACT community memecoin on Solana.
 
-- Site: https://relayworks.fun
-- X: [@RelayWorksHQ](https://x.com/RelayWorksHQ)
-- Email: support@relayworks.fun
+The site is plain HTML, CSS and ES modules. There's no build step and nothing to install.
+
+The platform itself (API, web app, payouts) lives in [pactora-app](https://github.com/OWNER/pactora-app).
+
+- X: [@JoinPactora](https://x.com/JoinPactora)
+- Telegram: [t.me/pactorateam](https://t.me/pactorateam)
 
 ## Run locally
 
 ```sh
-python -m http.server 8080 -d dist
+npm run serve        # or: python -m http.server 8765 -d site
 ```
 
-Open `http://127.0.0.1:8080`. The app uses hash routes:
+Open `http://127.0.0.1:8765`. On localhost the page talks to the app at `http://127.0.0.1:5188`. Start that from `pactora-app` with `npm run dev`.
 
-| Route | Page |
+## How it connects to the app
+
+Both "Join a team" forms post the email to the app's `POST /api/waitlist`. The app then opens its sign-up page with the email already filled in. If the app can't be reached, the visitor still goes straight to sign-up.
+
+The app only accepts waitlist posts from origins listed in its `LANDING_ORIGINS` setting, for example `LANDING_ORIGINS=https://joinpactora.com,https://www.joinpactora.com`.
+
+## Configuration
+
+Everything lives in [`site/config.js`](site/config.js):
+
+| Setting | What it does |
 |---|---|
-| `#/` | Landing page |
-| `#/app/overview` | Console overview |
-| `#/app/jobs` | Recovery jobs, filters and search |
-| `#/app/jobs/RW-024` | A recovery workflow |
-| `#/app/market` | Specialist network |
-| `#/app/receipts` | Receipts |
-| `#/app/settings` | Local preferences and reset |
-| `#/token` | Token and launch status |
-| `#/docs` | Product, architecture, integration and milestones |
-
-`dist/config.js` holds every link and token detail, and `apiBase` points the console at the control API. When the API is reachable, the console signs in with a Solana wallet, uploads the package, and pays USDC through x402 only after you accept the output.
+| `APP_URL` | Where the app lives. Defaults to `https://app.<this domain>`. Override it with `window.PACTORA_APP_URL` set before `main.js` loads |
+| `SOCIAL` | X and Telegram links, used in the header and footer |
+| `TOKEN` | $PACT name, network, supply and venue. Set `contract` to the mint address at launch; until then the page shows "Announced at launch" |
 
 ## Layout
 
 ```
-dist/            the deployed site (static)
-  main.js        router and action state
-  landing.js     marketing pages
-  app.js         console views
-  api.js         control API client
-  art.js         hand-built SVG character kit (Patch, Gary, Atlas, Mender, Restart)
-  *-model.js     procedural Three.js geometry
-  *-scene.js     WebGL scenes with damped pointer tracking and reduced motion
-  x402-pay.js    browser payment bundle, built from relayworks-recovery
-  vendor/        Three.js 0.180.0
-brand/           social and launchpad PNGs
-docs/            asset provenance, model notes, QA
-scripts/         model export, brand rendering and browser QA
-video/           the 90 s intro film, rendered from HTML
+site/
+  index.html     every section of the page
+  styles.css     theme tokens, layout, reveal animations, mobile breakpoints
+  main.js        role cards, token details, join forms, scroll effects
+  config.js      links and token terms
+  art/           role photos, crew city, title art, role coins
+  brand/         logo, favicon, $PACT coin, social card
+scripts/
+  check.mjs      parses every module and checks every local file reference
 ```
 
 ## Checks
 
 ```sh
-npm run check                                  # parse every module with Node
-node scripts/flow-test.mjs                     # click through a rescue in headless Chrome (site on :8765)
-node scripts/mobile-shot.mjs <url> <out.png>   # phone screenshot plus overflow report
+npm run check
 ```
+
+CI runs the same check on every push and pull request.
 
 ## Deploy
 
-`npm run deploy:cf` publishes `dist/` as Cloudflare Workers static assets (see `wrangler.jsonc`).
+`site/` is a static folder. Publish it on any static host, such as Cloudflare Pages, Netlify, Vercel or GitHub Pages, with no build command and `site` as the output directory.
 
-## Intro video
+## Fonts and art
 
-`video/intro.html` is a deterministic 90-second timeline. `video/render.mjs` renders it frame by frame in headless Chrome and pipes the frames into ffmpeg, and `video/soundtrack.py` synthesizes the score. See `video/README.md`.
+Newsreader, Inter, DM Mono and Pinyon Script load from Google Fonts under the SIL Open Font License. The role photos, crew-city art, title art, role coins, logo and $PACT coin are Pactora's own and are covered by this repository's license.
 
-## Art and fonts
+## $PACT
 
-All characters are original SVG in `dist/art.js` and original procedural geometry in `dist/specialist-model.js`. DM Sans and Lilita One are used under the SIL Open Font License (`dist/assets/OFL.txt`). Three.js is MIT (`dist/vendor/LICENSE-three.txt`). See `docs/ASSETS.md`.
+$PACT is a community memecoin. Holding it gives no ownership of Pactora, no share of any project's earnings and no trust badge, and you don't need it to use Pactora. The terms on this page are proposed and may change before launch. Nothing here is financial advice.
 
-## Token
+## Contributing
 
-$RELAY is a memecoin. It doesn't give you shares, revenue or votes, and you don't need it to use RelayWorks. Nothing here is financial advice.
+Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-MIT. See `LICENSE`.
+MIT. See [LICENSE](LICENSE).

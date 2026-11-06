@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pactora — Bring your skill. Find your team. Build together.</title>
+  <meta name="description" content="Pactora is where developers, artists, creators, marketers and community leads find each other, agree on the work in a signed pact, and build Solana projects together." />
+  <meta name="theme-color" content="#1c4839" />
+  <link rel="icon" href="brand/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="brand/favicon.png" type="image/png" sizes="512x512" />
+  <link rel="apple-touch-icon" href="brand/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pactora — Bring your skill. Find your team. Build together." />
+  <meta property="og:description" content="Find teammates, agree on the work before it starts, and get paid for what you actually contribute. $PACT on Solana." />
+  <meta property="og:image" content="brand/og_image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@JoinPactora" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Pinyon+Script&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top" data-top>
+    <a class="logo" href="#" aria-label="Pactora home"><img src="brand/nav_logo.svg" alt="Pactora" width="150" height="36" /></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#roles">Roles</a>
+      <a href="#how">How it works</a>
+      <a href="#pact">The pact</a>
+      <a href="#token">$PACT</a>
+    </nav>
+    <div class="top-actions">
+      <a class="round" data-social="x" target="_blank" rel="noopener noreferrer" aria-label="Pactora on X">
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.75 3h3.07l-6.71 7.67L22 21h-6.18l-4.84-6.33L5.44 21H2.37l7.18-8.2L2 3h6.34l4.37 5.78L17.75 3Zm-1.08 16.17h1.7L7.4 4.74H5.58l11.09 14.43Z"/></svg>
+      </a>
+      <a class="round" data-social="telegram" target="_blank" rel="noopener noreferrer" aria-label="Pactora on Telegram">
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M21.9 4.3 18.6 20c-.25 1.1-.9 1.37-1.82.85l-5.03-3.7-2.43 2.33c-.27.27-.5.5-1 .5l.36-5.12 9.33-8.43c.4-.36-.09-.56-.63-.2L5.86 13.5.9 11.95c-1.08-.34-1.1-1.08.23-1.6L20.5 2.88c.9-.33 1.68.2 1.4 1.42Z"/></svg>
+      </a>
+      <a class="btn btn-dark" data-app="/signup">Open app <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-art" aria-hidden="true"><img src="art/crew-city.webp" alt="" data-parallax /></div>
+      <div class="hero-inner">
+        <p class="kicker reveal">The crew a project needs</p>
+        <h1 class="hero-title reveal"><img src="art/pactora-title.webp" alt="Pactora — Bring your skill. Find your team. Build together." width="1520" height="460" /></h1>
+        <p class="lead reveal">Code alone won’t launch a coin. You need people whose strengths complement yours. Pactora is where they find each other, agree on the work before it starts, and get paid for what they actually contribute.</p>
+        <form class="join reveal" data-join>
+          <label class="sr-only" for="join-email">Email</label>
+          <input id="join-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+          <button class="btn btn-dark" type="submit">Join a team</button>
+        </form>
+        <p class="join-note reveal" data-join-note>Free to join. No token needed.</p>
+      </div>
+      <a class="scroll-cue" href="#roles" aria-label="Scroll to roles"><span></span></a>
+    </section>
+
+    <!-- Problem -->
+    <section class="gap" id="gap">
+      <div class="wrap narrow">
+        <p class="kicker reveal">The disconnect</p>
+        <h2 class="reveal">Devs build products. Marketers bring supporters. Artists make the brand. <em>They rarely meet.</em></h2>
+        <p class="lead reveal">Most projects stall because the people they need never find them, or join on a handshake and walk away when it gets hard. Pactora puts everyone in one place and writes the deal down first.</p>
+      </div>
+    </section>
+
+    <!-- Roles -->
+    <section class="roles" id="roles">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="kicker">01 — The team</p>
+          <h2>Fill the seats you are <span class="swash">m</span>issing.</h2>
+          <p class="muted">A project picks the roles it needs. It doesn’t need every role to start.</p>
+        </div>
+        <div class="role-grid" data-roles></div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how" id="how">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="kicker">02 — How it works</p>
+          <h2>From a skill to a <em>shipped</em> project.</h2>
+        </div>
+        <ol class="steps">
+          <li class="reveal"><b>01</b><h3>Show your work</h3><p>Build a profile from real samples: code, art, videos, campaigns. Trust comes from evidence, not followers.</p></li>
+          <li class="reveal"><b>02</b><h3>Find a project</h3><p>Browse open roles, or post your own project and list the seats you need filled.</p></li>
+          <li class="reveal"><b>03</b><h3>Talk first</h3><p>Every application opens a private conversation. Nobody commits until both sides are sure.</p></li>
+          <li class="reveal"><b>04</b><h3>Sign the pact</h3><p>Deliverables, deadlines, review and pay are written down and signed by every member’s wallet.</p></li>
+          <li class="reveal"><b>05</b><h3>Build and get paid</h3><p>Milestones are reviewed by someone else on the team, and payouts are verified on-chain.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Pact -->
+    <section class="pact" id="pact">
+      <div class="wrap pact-grid">
+        <div class="reveal">
+          <p class="kicker">03 — The agreement</p>
+          <h2>Write down the <em>work</em> and the reward.</h2>
+          <p class="lead">Who owns the task, when it is due, what finished means, and how that person is paid. A pact is frozen and hashed when it is sent. Any change clears every signature, so nobody signs something they didn’t read.</p>
+          <ul class="ticks">
+            <li>Fixed pay, vesting tokens, an earnings share, or a mix</li>
+            <li>Clear rules for ownership and for leaving the team</li>
+            <li>Pactora never holds your funds</li>
+          </ul>
+        </div>
+        <article class="pact-card reveal" aria-label="Example pact">
+          <header><span class="mono">PACT · #0042</span><span class="chip">3 of 3 signed</span></header>
+          <h3>Season one launch</h3>
+          <dl>
+            <div><dt>Deliverable</dt><dd>Mint page, brand kit and launch trailer</dd></div>
+            <div><dt>Due</dt><dd>4 weeks after signing</dd></div>
+            <div><dt>Done when</dt><dd>Reviewed and approved by another member</dd></div>
+            <div><dt>Pay</dt><dd>Fixed per milestone in USDC</dd></div>
+            <div><dt>Leaving</dt><dd>Keep pay for approved work; unfinished tasks return to the team</dd></div>
+          </dl>
+          <footer>
+            <span class="sig"><img src="art/roles/developer.webp" alt="" />Dev</span>
+            <span class="sig"><img src="art/roles/artist.webp" alt="" />Artist</span>
+            <span class="sig"><img src="art/roles/creator.webp" alt="" />Creator</span>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <!-- Token -->
+    <section class="token" id="token">
+      <div class="wrap">
+        <div class="token-hero reveal">
+          <img class="coin" src="brand/pact-token.png" alt="$PACT coin" width="140" height="140" />
+          <div>
+            <p class="kicker light">04 — Community memecoin on Solana</p>
+            <h2 data-token="symbol">$PACT</h2>
+            <p class="story">Everyone brings one piece. The crew makes something bigger.</p>
+          </div>
+        </div>
+        <div class="facts reveal">
+          <div><b>1B</b><span>Fixed supply</span></div>
+          <div><b>100%</b><span>Public launch</span></div>
+          <div><b>0%</b><span>Presale</span></div>
+          <div><b>0%</b><span>Team allocation</span></div>
+          <div><b>0%</b><span>Transfer tax</span></div>
+        </div>
+        <div class="ca reveal" data-ca></div>
+
+        <div class="token-grid">
+          <div class="panel reveal">
+            <h3>Launch</h3>
+            <dl class="dl" data-token-dl></dl>
+          </div>
+          <div class="panel reveal">
+            <h3>Creator-fee budget</h3>
+            <div class="bar" role="img" aria-label="70% product and operations, 20% grants, 10% reserve">
+              <div style="flex:70"><b>70%</b><span>Product &amp; ops</span></div>
+              <div style="flex:20"><b>20%</b><span>Grants</span></div>
+              <div style="flex:10"><b>10%</b><span>Reserve</span></div>
+            </div>
+            <p class="small">Applied to net creator-fee receipts. Grants pay for approved work, not for holding. This is a spending budget, not a supply split.</p>
+          </div>
+          <div class="panel reveal">
+            <h3>Platform</h3>
+            <ul class="plain">
+              <li><b>Free</b> profiles, project discovery and finding teammates. No tokens needed.</li>
+              <li><b>2% service fee</b> only on approved project earnings, and only when a team opts in.</li>
+              <li><b>Separate pots:</b> the token, the platform treasury and each project’s revenue are kept apart.</li>
+            </ul>
+          </div>
+          <div class="panel reveal">
+            <h3>Holding $PACT</h3>
+            <div class="means">
+              <div class="yes"><h4>Means</h4><p>A shared identity for the crew. Fee discounts and community perks, announced only once they are live.</p></div>
+              <div class="no"><h4>Doesn’t mean</h4><p>Ownership in Pactora, a cut of project earnings, or a trust badge. Reputation comes from work.</p></div>
+            </div>
+          </div>
+        </div>
+        <p class="disclaimer reveal">Terms are proposed and may change before launch. Team purchases, if any, are disclosed with wallets, amounts and locks. Nothing here is financial advice.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="join">
+      <div class="wrap narrow reveal">
+        <h2>Bring your skill. <em>Find your team.</em></h2>
+        <p class="lead">Create your profile in a minute with email, Google or a Solana wallet.</p>
+        <form class="join center" data-join>
+          <label class="sr-only" for="join-email-2">Email</label>
+          <input id="join-email-2" type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+          <button class="btn btn-dark" type="submit">Join a team</button>
+        </form>
+        <p class="join-note" data-join-note>Free to join. No token needed.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-grid">
+      <div>
+        <img src="brand/nav_logo.svg" alt="Pactora" width="150" height="36" />
+        <p class="muted">Bring your skill. Find your team. Build together. Share what you earn.</p>
+      </div>
+      <nav aria-label="Pactora">
+        <h4>Pactora</h4>
+        <a data-app="/signup">Open the app ↗</a>
+        <a data-app="/explore">Explore projects ↗</a>
+        <a href="#token">$PACT tokenomics</a>
+      </nav>
+      <nav aria-label="Community">
+        <h4>Community</h4>
+        <a data-social="x" target="_blank" rel="noopener noreferrer">Follow us on X ↗</a>
+        <a data-social="telegram" target="_blank" rel="noopener noreferrer">Join us on Telegram ↗</a>
+        <a href="https://github.com/OWNER/pactora" target="_blank" rel="noopener noreferrer">Source code ↗</a>
+      </nav>
+    </div>
+    <p class="wrap fine">© <span data-year></span> Pactora contributors. $PACT is a community memecoin. It gives no ownership, earnings or votes, and you don’t need it to use Pactora.</p>
+  </footer>
+</body>
+</html>

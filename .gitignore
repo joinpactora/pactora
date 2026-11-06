@@ -1,11 +1,6 @@
 node_modules/
-__pycache__/
 .DS_Store
+*.log
 .env
 .env.*
-.wrangler/
-model/poses/
-model/journey/
-dist/relayworks-source.zip
-video/*.mp4
-video/*.wav
+shots/
